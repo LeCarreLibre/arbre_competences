@@ -3,22 +3,24 @@ from django.contrib.auth.models import User
 
 class Profil(models.Model):
     user = models.OneToOneField(User) # La liaison OneToOne vers le modèle User
-    telephone = models.IntegerField(null=True)
+    telephone = models.CharField(null=True, verbose_name="N° de téléphone", max_length=20)
     benevole = models.BooleanField(default=False)
-    adresse = TextField(null=True, blank=True)
+    adresse = models.TextField(null=True, blank=True)
     
-    def __unicode__(self):
-        return u"Profil de {0}".format(self.user.username)
+    def __str__(self):
+        return "Profil de {0}".format(self.user.username)
 
 class Categorie(models.Model):
     nom = models.CharField(max_length=255)
     description = models.TextField()
 
-    def __unicode__(self):
-        return u"Catégorie de compétences {0}".format(self.nom)
+    def __str__(self):
+        return "Compétences en {0}".format(self.nom)
 
-class Details(models.Model):
+class Detail(models.Model):
     details = models.TextField()
-    user = models.ForeignKey('Profil')
-    categorie = models.ManyToManyField('Categorie')
+    user = models.ForeignKey('Profil', verbose_name="utilisateur concerné")
+    categorie = models.ForeignKey('Categorie')
 
+    def __str__(self):
+        return self.details
