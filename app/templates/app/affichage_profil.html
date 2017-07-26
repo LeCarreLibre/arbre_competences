@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}
+{% endblock %}
+
+{% block content %}
+	<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
+	<dl>
+		<dt>Nom</dt>
+		<dd>{{ profil.user.last_name }}</dd>
+
+		<dt>Prénom</dt>
+		<dd>{{ profil.user.first_name }}</dd>
+
+		<dt>Nom d'utilisateur</dt>
+		<dd>{{ profil.user.username }}</dd>
+
+		<dt>Téléphone</dt>
+		<dd>{{ profil.telephone }}</dd>
+
+		<dt>Adresse</dt>
+		<dd>{{ profil.adresse|linebreaks }}</dd>
+
+		<dt>E-mail</dt>
+		<dd>
+			<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
+		</dd>
+
+		<dt>Bénévole</dt>
+		<dd>
+			{% if profil.benevole %}
+				Oui
+			{% else %}
+				Non
+			{% endif %}
+		</dd>
+
+		<dt>Compétences</dt>
+		<dd>
+			<dl>
+				{% for detail_competence in profil.detail_set.all %}
+					<dt>{{ detail_competence.categorie.nom }}</dt>
+					<dd>{{ detail_competence.details|linebreaks }}</dd>
+				{% endfor %}
+			</dl>
+		</dd>
+	</dl>
+{% endblock %}

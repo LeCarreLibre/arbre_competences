@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Liste des profils{% endblock %}
+
+{% block content %}
+	<h1>Liste des profils</h1>
+	<ul>
+		{% for profil in liste_profils %}
+			<li>
+				<p>
+					<a href="{% url "affichage_profil" profil.id %}"><b>{{ profil.user.first_name }} {{ profil.user.last_name }}</b></a><br>
+					<i>{{ profil.user.username }}</i><br>
+					<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a><br>
+					{{ profil.telephone }}<br>
+					{{ profil.adresse|linebreaks }}
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
