@@ -95,3 +95,4 @@ terminal.glue
 
 # Glade backups
 *.glade~
+db.sqlite3
