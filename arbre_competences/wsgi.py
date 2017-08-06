@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # -*-coding:utf-8 -*
 """
 WSGI config for arbre_competences project.

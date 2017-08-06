@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+#!/usr/bin/env python
 # -*-coding:utf-8 -*-
-=======
-# -*-coding:utf-8 -*
->>>>>>> codage_utf-8
+
 """
 Django settings for arbre_competences project.
 
