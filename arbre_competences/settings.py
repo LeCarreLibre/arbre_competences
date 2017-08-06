@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # -*-coding:utf-8 -*-
+=======
+# -*-coding:utf-8 -*
+>>>>>>> codage_utf-8
 """
 Django settings for arbre_competences project.
 
@@ -77,23 +81,23 @@ WSGI_APPLICATION = 'arbre_competences.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#DATABASES = {
-#     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'arbre_competences',
-        'USER': 'test',
-        'PASSWORD': 'test',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'arbre_competences',
+#        'USER': 'test',
+#        'PASSWORD': 'test',
+#        'HOST': '127.0.0.1',
+#        'PORT': '',
+#    }
+#}
 
 
 # Password validation
