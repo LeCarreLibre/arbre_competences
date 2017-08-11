@@ -2,7 +2,7 @@
 # -*-coding:utf-8 -*-
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from app.models import Profil, Categorie , Detail
+from app.models import *
 
 class ListeProfils(ListView):
     model = Profil
@@ -18,8 +18,3 @@ class ListeCategories(ListView):
     model = Categorie
     context_object_name = "liste_categories"
     template_name = "app/liste_categories.html"
-
-class AffichageDetails(ListView):
-    model = Profil
-    context_object_name = "details"
-    template_name = "app/affichage_details.html"

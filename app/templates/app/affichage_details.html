@@ -1,28 +1,18 @@
 {% extends "base.html" %}
 
+{% block static %}
+	app/css/
+{% endblock %}
 {% block title %}
 	Details de {{ profil.user.first_name }}
 {% endblock %}
 
 {% block content %}
-	<h1>Details de l'utilisateur {{ profil.user.first_name }}</h1>
-	<dl>
-		<dt>Nom</dt>
-		<dd>{{ profil.user.last_name }}</dd>
-
-		<dt>Prénom</dt>
-		<dd>{{ profil.user.first_name }}</dd>
-
-		<dt>ID</dt>
-		<dd>{{ profil.id }}</dd>
-		
-		<dt>Compétences</dt>
+	<h1>Details de {{ profil.user.first_name }}</h1>
+		<dt>Compétences et details</dt>
 		<dd>
 			<dl>
-				{% for detail_competence in profil.detail_set.all %}
-					<dt>{{ detail_competence.categorie.nom }}</dt>
-					<dd>{{ detail_competence.details|linebreaks }}</dd>
-				{% endfor %}
+				{{ details.user }}
 			</dl>
 		</dd>
 	</dl>

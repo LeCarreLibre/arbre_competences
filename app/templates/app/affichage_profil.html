@@ -41,7 +41,9 @@
 			<dl>
 				{% for detail_competence in profil.detail_set.all %}
 					<dt>{{ detail_competence.categorie.nom }}</dt>
-					<dd>{{ detail_competence.details|linebreaks }}</dd>
+					<dd>
+						<details>{{ detail_competence.details|linebreaks }}</details>
+					</dd>
 				{% endfor %}
 			</dl>
 		</dd>
