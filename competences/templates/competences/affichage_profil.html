@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+	<a href="{% url "liste_profils" %}"><input type="button" value="Retour à la liste des profils"></a>
 	<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
 	<dl>
 		<dt>Nom</dt>
@@ -40,9 +41,9 @@
 		<dd>
 			<dl>
 				{% for detail_competence in profil.detail_set.all %}
-					<dt>{{ detail_competence.categorie.nom }}</dt>
+					<a href="{% url "liste_categories" %}"><dt>{{ detail_competence.categorie.nom }}</dt></a>
 					<dd>
-						<details>{{ detail_competence.details|linebreaks }}</details>
+						<details value="+ de détail">{{ detail_competence.details|linebreaks }}</details>
 					</dd>
 				{% endfor %}
 			</dl>

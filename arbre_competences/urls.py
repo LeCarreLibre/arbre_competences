@@ -21,5 +21,5 @@ from competences import urls
 
 urlpatterns = [
     url(r'^admin/?', admin.site.urls),
-    url(r'^competences/?', include(urls)),
+    url(r'^competences/', include(urls)),
 ]

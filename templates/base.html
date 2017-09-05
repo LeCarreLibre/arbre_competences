@@ -4,11 +4,16 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="{% block static %}{% endblock %}">
 	<title>{% block title %}{% endblock %}</title>
+	<style type="text/css">#creators {	position: absolute;	left: 0px;	bottom: 0px; z-index: 1; }
+</style>
 </head>
 <body>
+	<nav>{% block nav %}{% endblock %}</nav>
 	{% block content %}{% endblock %}
 </body>
 <footer>
 	{% block footer %}{% endblock %}
+	<p id="creators">Ce site a été crée par <a href="mailto: nilsdu29@gmail.com">
+	Nils Van Zuijlen</a> et par <a href="mailto: sam.vzh@orange.fr">Samuel Van Zuijlen</a></p>
 </footer>
 </html>
