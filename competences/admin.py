@@ -3,7 +3,7 @@
 from django.contrib import admin
 from django.utils.text import Truncator
 
-from app.models import Profil, Categorie, Detail
+from competences.models import Profil, Categorie, Detail
 
 class ProfilAdmin(admin.ModelAdmin):
     list_display = ('user', 'telephone', 'adresse', 'benevole')
