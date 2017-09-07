@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
 
+# Ce programme est sous licence GNU GPL
+# ©2017 Nils et Samuel Van Zuijlen
+
 """
 Django settings for arbre_competences project.
 
@@ -40,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app',
+    'competences',
 ]
 
 MIDDLEWARE = [
@@ -122,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr-FR'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
