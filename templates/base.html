@@ -1,9 +1,27 @@
+<!--
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+-->
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+	<link rel="stylesheet" type="text/css" href="{% block static %}{% endblock %}">
 	<title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+	<nav>{% block nav %}{% endblock %}</nav>
 	{% block content %}{% endblock %}
 </body>
+<footer>
+	{% block footer %}{% endblock %}
+	<p id="creators">Ce site a été crée par <a href="mailto: nilsdu29@gmail.com">
+	Nils</a> et <a href="mailto: sam.vzh@orange.fr">Samuel</a> Van Zuijlen</p>
+	<p id="copyright">
+	Licence GNU GPL	©2017 Nils et Samuel Van Zuijlen
+	</p>
+</footer>
 </html>

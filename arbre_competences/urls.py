@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*
+
+# Ce programme est sous licence GNU GPL
+# ©2017 Nils et Samuel Van Zuijlen
+
 """arbre_competences URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -15,13 +19,11 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-
-from app.views import ListeProfils, AffichageProfil
+from competences import urls
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^profils/$', ListeProfils.as_view(), name="liste_profils"),
-    url(r'^profil/(?P<pk>\d+)', AffichageProfil.as_view(), name="affichage_profil")
+    url(r'^admin/?', admin.site.urls),
+    url(r'^competences/', include(urls)),
 ]

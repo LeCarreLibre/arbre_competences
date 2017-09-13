@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
+
+# Ce programme est sous licence GNU GPL
+# ©2017 Nils et Samuel Van Zuijlen
+
 from django.db import models
 from django.contrib.auth.models import User
 
 class Profil(models.Model):
     user = models.OneToOneField(User) # La liaison OneToOne vers le modèle User
     telephone = models.CharField(null=True, verbose_name="N° de téléphone", max_length=20)
-    benevole = models.BooleanField(default=False)
+    stagiaire = models.BooleanField(default=False)
     adresse = models.TextField(null=True, blank=True)
     
     def __str__(self):

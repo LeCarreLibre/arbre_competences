@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Liste des categories{% endblock %}
+{% block content %}
+	<a href="{% url "liste_profils" %}"><input type="button" value="Retour à la liste des profils"></a>
+	<h1>Liste des categories</h1>
+	<ul>
+		{% for categories in liste_categories %}
+			<li>
+				<p>
+					<b>{{ categories.nom }}</b><br>
+					<i></i><br/>
+					{{ categories.description|linebreaks }}
+				</p>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

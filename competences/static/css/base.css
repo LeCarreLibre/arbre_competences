@@ -1,0 +1,14 @@
+#creators
+{
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+	z-index: 1;
+}
+#copyright
+{
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1;
+}

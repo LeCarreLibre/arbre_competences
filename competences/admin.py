@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
+
+# Ce programme est sous licence GNU GPL
+# ©2017 Nils et Samuel Van Zuijlen
+
 from django.contrib import admin
 from django.utils.text import Truncator
 
-from app.models import Profil, Categorie, Detail
+from competences.models import Profil, Categorie, Detail
 
 class ProfilAdmin(admin.ModelAdmin):
-    list_display = ('user', 'telephone', 'adresse', 'benevole')
-    list_filter = ('benevole',)
+    list_display = ('user', 'telephone', 'adresse', 'stagiaire')
+    list_filter = ('stagiaire',)
     #date_hierarchy = 'user.date_joined'
     #ordering = ('user.date_joined', )
     search_fields = ('telephone',) # 'user.first_name', 'user.last_name', 

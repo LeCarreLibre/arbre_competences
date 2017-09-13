@@ -5,6 +5,7 @@
 {% endblock %}
 
 {% block content %}
+	<a href="{% url "liste_profils" %}"><input type="button" value="Retour à la liste des profils"></a>
 	<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
 	<dl>
 		<dt>Nom</dt>
@@ -27,9 +28,9 @@
 			<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
 		</dd>
 
-		<dt>Bénévole</dt>
+		<dt>Peut prendre un stagiaire</dt>
 		<dd>
-			{% if profil.benevole %}
+			{% if profil.stagiaire %}
 				Oui
 			{% else %}
 				Non
@@ -40,8 +41,10 @@
 		<dd>
 			<dl>
 				{% for detail_competence in profil.detail_set.all %}
-					<dt>{{ detail_competence.categorie.nom }}</dt>
-					<dd>{{ detail_competence.details|linebreaks }}</dd>
+					<a href="{% url "liste_categories" %}"><dt>{{ detail_competence.categorie.nom }}</dt></a>
+					<dd>
+						<details value="+ de détail">{{ detail_competence.details|linebreaks }}</details>
+					</dd>
 				{% endfor %}
 			</dl>
 		</dd>
