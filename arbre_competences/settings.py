@@ -60,7 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            ],
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -80,22 +80,22 @@ WSGI_APPLICATION = 'arbre_competences.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'arbre_competences',
-#        'USER': 'test',
-#        'PASSWORD': 'test',
-#        'HOST': '127.0.0.1',
-#        'PORT': '',
-#    }
-#}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'arbre_competences',
+#         'USER': 'test',
+#         'PASSWORD': 'test',
+#         'HOST': '127.0.0.1',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation

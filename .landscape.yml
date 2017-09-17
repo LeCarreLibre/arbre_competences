@@ -1,0 +1,13 @@
+python-targets:
+    - 2
+    - 3
+pep8:
+    full: true
+doc-warnings: true
+max-line-length: 80
+requirements:
+    - django
+ignore-paths:
+    - manage.py
+ignore-patterns:
+    - ^[a-zA-Z]+/migrations/
