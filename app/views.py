@@ -5,10 +5,12 @@ from django.views.generic import ListView, DetailView
 
 from app.models import Profil
 
+
 class ListeProfils(ListView):
     model = Profil
     context_object_name = "liste_profils"
     template_name = "app/liste_profils.html"
+
 
 class AffichageProfil(DetailView):
     model = Profil
