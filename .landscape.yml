@@ -9,3 +9,4 @@ requirements:
     - django
 ignore-paths:
     - manage.py
+    - "[a-zA-Z]+/migrations"
