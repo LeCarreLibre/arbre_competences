@@ -3,5 +3,5 @@
 from django.apps import AppConfig
 
 
-class AppConfig(AppConfig):
+class CompetencesConfig(AppConfig):
     name = 'competences'
