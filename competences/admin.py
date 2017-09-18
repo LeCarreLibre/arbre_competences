@@ -5,10 +5,12 @@
 from django.contrib import admin
 from django.utils.text import Truncator
 
-from app.models import Profil, Categorie, Detail
+from competences.models import Profil, Categorie, Detail
 
 
 class ProfilAdmin(admin.ModelAdmin):
+
+
     """Classe d'administration du modèle Profil"""
     list_display = ('user', 'telephone', 'adresse', 'benevole')
     list_filter = ('benevole',)
@@ -16,6 +18,8 @@ class ProfilAdmin(admin.ModelAdmin):
 
 
 class CategorieAdmin(admin.ModelAdmin):
+
+
     """Classe d'administration du modèle des catégories de compétences"""
     list_display = ('nom', 'description')
     ordering = ('nom',)
@@ -23,6 +27,8 @@ class CategorieAdmin(admin.ModelAdmin):
 
 
 class DetailAdmin(admin.ModelAdmin):
+
+
     """Classe d'administration du modèle des détails de compétences"""
     list_display = ('categorie', 'user', 'details_court')
     list_filter = ('categorie', 'user')
@@ -31,8 +37,9 @@ class DetailAdmin(admin.ModelAdmin):
     fields = ('user', 'categorie', 'details')
 
     def details_court(self, detail):
-        """
 
+
+        """
         Retourne les 40 premiers caractères du contenu de l'article, suivi de
         points de suspension si le texte est plus long.
         """
