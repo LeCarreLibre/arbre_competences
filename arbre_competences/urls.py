@@ -26,5 +26,6 @@ from app.views import ListeProfils, AffichageProfil
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^profils/$', ListeProfils.as_view(), name="liste_profils"),
-    url(r'^profil/(?P<pk>\d+)', AffichageProfil.as_view(), name="affichage_profil")
+    url(r'^profil/(?P<pk>\d+)', AffichageProfil.as_view(),
+        name="affichage_profil")
 ]
