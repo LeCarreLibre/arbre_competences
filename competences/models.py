@@ -5,7 +5,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
 class Profil(models.Model):
     """Informations supplémentaires sur les utilisateurs"""
     user = models.OneToOneField(User)  # La liaison OneToOne vers le modèle User
