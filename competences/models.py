@@ -16,7 +16,6 @@ class Profil(models.Model):
     def __str__(self):
         return "Profil de {0}".format(self.user.username)
 
-
 class Categorie(models.Model):
     """Catégories de compétences"""
     nom = models.CharField(max_length=255)
@@ -24,7 +23,6 @@ class Categorie(models.Model):
 
     def __str__(self):
         return "Compétences en {0}".format(self.nom)
-
 
 class Detail(models.Model):
     """Détails des compétences par utilisateur"""
