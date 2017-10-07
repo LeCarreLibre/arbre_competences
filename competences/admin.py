@@ -6,17 +6,20 @@ from django.contrib import admin
 from django.utils.text import Truncator
 from competences.models import Profil, Categorie, Detail
 
+
 class ProfilAdmin(admin.ModelAdmin):
     """Classe d'administration du modèle Profil"""
     list_display = ('user', 'telephone', 'adresse', 'benevole')
     list_filter = ('benevole',)
     search_fields = ('telephone',)
 
+
 class CategorieAdmin(admin.ModelAdmin):
     """Classe d'administration du modèle des catégories de compétences"""
     list_display = ('nom', 'description')
     ordering = ('nom',)
     search_fields = ('nom', 'description')
+
 
 class DetailAdmin(admin.ModelAdmin):
     """Classe d'administration du modèle des détails de compétences"""
