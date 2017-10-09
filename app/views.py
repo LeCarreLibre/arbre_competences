@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
-"""Vues de l'application"""
+"""
+
+Vues de l'application
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+"""
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView

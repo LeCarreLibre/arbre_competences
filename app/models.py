@@ -1,6 +1,11 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
-"""Modèles de la BdD"""
+"""
+
+Modèles de la BdD
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+"""
 
 from django.db import models
 from django.contrib.auth.models import User
