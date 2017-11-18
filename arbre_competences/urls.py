@@ -18,14 +18,12 @@ Including another URLconf
 Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
-from app.views import ListeProfils, AffichageProfil
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^profils/$', ListeProfils.as_view(), name="liste_profils"),
-    url(r'^profil/(?P<pk>\d+)', AffichageProfil.as_view(),
-        name="affichage_profil")
+    url(r'^', include('competences.urls')),
+    url(r'^competences/', include('competences.urls')),
 ]

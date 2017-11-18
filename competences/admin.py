@@ -10,8 +10,7 @@ Ce programme est sous licence GNU GPL
 
 from django.contrib import admin
 from django.utils.text import Truncator
-
-from app.models import Profil, Categorie, Detail
+from competences.models import Profil, Categorie, Detail
 
 
 class ProfilAdmin(admin.ModelAdmin):
@@ -38,14 +37,12 @@ class DetailAdmin(admin.ModelAdmin):
 
     def details_court(self, detail):
         """
-
         Retourne les 40 premiers caractères du contenu de l'article, suivi de
         points de suspension si le texte est plus long.
         """
         return Truncator(detail.details).chars(40, truncate='...')
 
     details_court.short_description = 'Aperçu du contenu'
-
 
 admin.site.register(Profil, ProfilAdmin)
 admin.site.register(Categorie, CategorieAdmin)

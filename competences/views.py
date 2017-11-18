@@ -7,21 +7,22 @@ Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
 
-from django.shortcuts import render
+# from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-
-from app.models import Profil
+from competences.models import Profil
 
 
 class ListeProfils(ListView):
-	"""Liste des profils utilisateurs"""
+    """Liste des profils utilisateurs"""
+
     model = Profil
     context_object_name = "liste_profils"
-    template_name = "app/liste_profils.html"
+    template_name = "competences/liste_profils.html"
 
 
 class AffichageProfil(DetailView):
-	"""Affichage détaillé du profil d'un utilisateur"""
+    """Affichage détaillé du profil d'un utilisateur"""
+
     model = Profil
     context_object_name = "profil"
-    template_name = "app/affichage_profil.html"
+    template_name = "competences/affichage_profil.html"
