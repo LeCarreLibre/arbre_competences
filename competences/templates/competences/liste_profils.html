@@ -8,29 +8,29 @@ Ce programme est sous licence GNU GPL
 {% block title %}Liste des profils{% endblock %}
 
 {% block content %}
-	<div class="row">
-		<div class="col-xs-12">
-			<h1>Liste des profils</h1>
-			<div class="panel-group" id="liste-profils">
-				{% for profil in liste_profils %}
-					<div class="panel panel-default">
-						<div class="panel-heading"> 
-							<h3 class="panel-title">
-								<a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse"> {{ profil.user.first_name }} {{ profil.user.last_name }} <b class="caret"></b> </a> 
-							</h3>
-						</div>
-						<div id="item{{ forloop.counter }}" class="panel-collapse collapse">
-							<div class="panel-body">
-								<i>{{ profil.user.username }}</i><br>
-								<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a><br>
-								{{ profil.telephone }}<br>
-								{{ profil.adresse|linebreaks }}
-								<a href="{% url "affichage_profil" profil.id %}" class="btn btn-primary pull-right">Voir</a>
-							</div>
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Liste des profils</h1>
+            <div class="panel-group" id="liste-profils">
+                {% for profil in liste_profils %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading"> 
+                            <h3 class="panel-title">
+                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse"> {{ profil.user.first_name }} {{ profil.user.last_name }} <b class="caret"></b> </a> 
+                            </h3>
+                        </div>
+                        <div id="item{{ forloop.counter }}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <i>{{ profil.user.username }}</i><br>
+                                <a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a><br>
+                                {{ profil.telephone }}<br>
+                                {{ profil.adresse|linebreaks }}
+                                <a href="{% url "affichage_profil" profil.id %}" class="btn btn-primary pull-right">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
