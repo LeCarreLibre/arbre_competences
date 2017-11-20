@@ -10,45 +10,65 @@ Ce programme est sous licence GNU GPL
 {% endblock %}
 
 {% block content %}
-	<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
-	<dl>
-		<dt>Nom</dt>
-		<dd>{{ profil.user.last_name }}</dd>
-
-		<dt>Prénom</dt>
-		<dd>{{ profil.user.first_name }}</dd>
-
-		<dt>Nom d'utilisateur</dt>
-		<dd>{{ profil.user.username }}</dd>
-
-		<dt>Téléphone</dt>
-		<dd>{{ profil.telephone }}</dd>
-
-		<dt>Adresse</dt>
-		<dd>{{ profil.adresse|linebreaks }}</dd>
-
-		<dt>E-mail</dt>
-		<dd>
-			<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
-		</dd>
-
-		<dt>Bénévole</dt>
-		<dd>
-			{% if profil.benevole %}
-				Oui
-			{% else %}
-				Non
-			{% endif %}
-		</dd>
-
-		<dt>Compétences</dt>
-		<dd>
-			<dl>
-				{% for detail_competence in profil.detail_set.all %}
-					<dt>{{ detail_competence.categorie.nom }}</dt>
-					<dd>{{ detail_competence.details|linebreaks }}</dd>
-				{% endfor %}
-			</dl>
-		</dd>
-	</dl>
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
+			<a href="{% url "liste_profils" %}" class="btn btn-primary" style="margin-bottom: 1em">Retour à la liste des profils</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="table table-striped table-condensed">
+				<tr>
+					<th>Nom</th>
+					<td>{{ profil.user.last_name }}</td>
+				</tr>
+				<tr>
+					<th>Prénom</th>
+					<td>{{ profil.user.first_name }}</td>
+				</tr>
+				<tr>
+					<th>Nom d'utilisateur</th>
+					<td>{{ profil.user.username }}</td>
+				</tr>
+				<tr>
+					<th>Téléphone</th>
+					<td>{{ profil.telephone }}</td>
+				</tr>
+				<tr>
+					<th>Adresse</th>
+					<td>{{ profil.adresse|linebreaks }}</td>
+				</tr>
+				<tr>
+					<th>E-mail</th>
+					<td>
+						<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
+					</td>
+				</tr>
+				<tr>
+					<th>Bénévole</th>
+					<td>
+						{% if profil.benevole %}
+							Oui
+						{% else %}
+							Non
+						{% endif %}
+					</td>
+				</tr>
+				<tr>
+					<th>Compétences</th>
+					<td>
+						<table class="table">
+							{% for detail_competence in profil.detail_set.all %}
+								<tr>
+									<th>{{ detail_competence.categorie.nom }}</th>
+									<td>{{ detail_competence.details|linebreaks }}</td>
+								</tr>
+							{% endfor %}
+						</table>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 {% endblock %}
