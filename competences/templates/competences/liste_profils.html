@@ -14,7 +14,7 @@ Ce programme est sous licence GNU GPL
             <div class="panel-group" id="liste-profils">
                 {% for profil in liste_profils %}
                     <div class="panel panel-default">
-                        <div class="panel-heading"> 
+                        <div class="panel-heading">
                             <h3 class="panel-title">
                                 <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse"> {{ profil.user.first_name }} {{ profil.user.last_name }} <b class="caret"></b> </a> 
                             </h3>
