@@ -5,23 +5,26 @@ Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 {% endcomment %}
 
-{% block title %}Liste des competences{% endblock %}
+{% block title %}Liste des compétences{% endblock %}
 
 {% block content %}
     <div class="row">
         <div class="col-xs-12">
-            <h1>Liste des competences</h1>
+            <h1>Liste des compétences</h1>
             <div class="panel-group" id="liste-competences">
-                {% for nom in liste_competences %}
+                {% for competence in liste_competences %}
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                {{ liste_competences.nom }}
+                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse">
+                                    {{ competence.nom }}
+                                    <b class="caret"></b>
+                                </a>
                             </h3>
                         </div>
                         <div id="item{{ forloop.counter }}" class="panel-collapse collapse">
                             <div class="panel-body">
-                                {{ liste_competences.description }}
+                                {{ competence.description }}
                             </div>
                         </div>
                     </div>
