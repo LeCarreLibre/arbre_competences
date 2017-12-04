@@ -32,6 +32,7 @@ SECRET_KEY = '7izr&gr&vt1(0s3$4r%_7^i*ne0g$!1yd1c&lp$wrqha9d5*60'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+INTERNAL_IPS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'competences',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'arbre_competences.urls'
