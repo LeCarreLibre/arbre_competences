@@ -5,27 +5,34 @@ Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 {% endcomment %}
 
-{% block title %}Liste des compétences{% endblock %}
-
+{% block title %}
+    
+{% endblock %}
+    Compétences en {{ competence.nom }}
 {% block content %}
     <div class="row">
         <div class="col-xs-12">
-            <h1>Liste des compétences</h1>
+            <h1>Compétences en {{ competence.nom }}</h1>
+            <a href="{% url "competences" %}" class="btn btn-primary" style="margin-bottom: 1em">Retour à la liste des compétences</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
             <div class="panel-group" id="liste-competences">
-                {% for competence in liste_competences %}
+                {% for detail in competence.detail_set.all %}
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse">
-                                    {{ competence.nom }}
+                                <a href="#item{{ forloop.counter }}" data-toggle="collapse">
+                                    {{ detail.user.user.first_name }} {{ detail.user.user.last_name}}
                                     <b class="caret"></b>
                                 </a>
                             </h3>
                         </div>
                         <div id="item{{ forloop.counter }}" class="panel-collapse collapse">
                             <div class="panel-body">
-                                {{ competence.description }}<br>
-                                <a href="{% url "affichage_competence" competence.id %}" class="btn btn-primary pull-right">Voir</a>
+                                {{ detail.details|linebreaks }}<br>
+                                <a href="{% url "affichage_profil" detail.user.id %}" class="btn btn-primary pull-right">Voir plus</a>
                             </div>
                         </div>
                     </div>

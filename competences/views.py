@@ -33,3 +33,10 @@ class ListeCompetences(ListView):
     model = Categorie
     context_object_name = "liste_competences"
     template_name = "competences/liste_competences.html"
+
+class AffichageCompetence(DetailView):
+    """Affichage détaillé des personnes possédant le compétence"""
+    
+    model = Categorie
+    context_object_name = "competence"
+    template_name = "competences/affichage_competence.html"
