@@ -102,3 +102,6 @@ terminal.glue
 # SQLite database
 *.sqlite
 *.sqlite3
+# DB browser for SQLite
+*.sqlite-journal
+*.sqlite3-journal 

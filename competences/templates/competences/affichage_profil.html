@@ -6,69 +6,69 @@ Ce programme est sous licence GNU GPL
 {% endcomment %}
 
 {% block title %}
-	Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}
+    Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}
 {% endblock %}
 
 {% block content %}
-	<div class="row">
-		<div class="col-xs-12">
-			<h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
-			<a href="{% url "liste_profils" %}" class="btn btn-primary" style="margin-bottom: 1em">Retour à la liste des profils</a>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-12">
-			<table class="table table-striped table-condensed">
-				<tr>
-					<th>Nom</th>
-					<td>{{ profil.user.last_name }}</td>
-				</tr>
-				<tr>
-					<th>Prénom</th>
-					<td>{{ profil.user.first_name }}</td>
-				</tr>
-				<tr>
-					<th>Nom d'utilisateur</th>
-					<td>{{ profil.user.username }}</td>
-				</tr>
-				<tr>
-					<th>Téléphone</th>
-					<td>{{ profil.telephone }}</td>
-				</tr>
-				<tr>
-					<th>Adresse</th>
-					<td>{{ profil.adresse|linebreaks }}</td>
-				</tr>
-				<tr>
-					<th>E-mail</th>
-					<td>
-						<a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
-					</td>
-				</tr>
-				<tr>
-					<th>Bénévole</th>
-					<td>
-						{% if profil.benevole %}
-							Oui
-						{% else %}
-							Non
-						{% endif %}
-					</td>
-				</tr>
-				<tr>
-					<th>Compétences</th>
-					<td>
-						<table class="table">
-							{% for detail_competence in profil.detail_set.all %}
-								<tr>
-									<th>{{ detail_competence.categorie.nom }}</th>
-									<td>{{ detail_competence.details|linebreaks }}</td>
-								</tr>
-							{% endfor %}
-						</table>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Profil de {{ profil.user.first_name }} {{ profil.user.last_name }}</h1>
+            <a href="{% url "liste_profils" %}" class="btn btn-primary" style="margin-bottom: 1em">Retour à la liste des profils</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-striped table-condensed">
+                <tr>
+                    <th>Nom</th>
+                    <td>{{ profil.user.last_name }}</td>
+                </tr>
+                <tr>
+                    <th>Prénom</th>
+                    <td>{{ profil.user.first_name }}</td>
+                </tr>
+                <tr>
+                    <th>Nom d'utilisateur</th>
+                    <td>{{ profil.user.username }}</td>
+                </tr>
+                <tr>
+                    <th>Téléphone</th>
+                    <td>{{ profil.telephone }}</td>
+                </tr>
+                <tr>
+                    <th>Adresse</th>
+                    <td>{{ profil.adresse|linebreaks }}</td>
+                </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <td>
+                        <a href="mailto:{{ profil.user.email }}">{{ profil.user.email }}</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Bénévole</th>
+                    <td>
+                        {% if profil.benevole %}
+                            Oui
+                        {% else %}
+                            Non
+                        {% endif %}
+                    </td>
+                </tr>
+                <tr>
+                    <th>Compétences</th>
+                    <td>
+                        <table class="table">
+                            {% for detail_competence in profil.detail_set.all %}
+                                <tr>
+                                    <th>{{ detail_competence.categorie.nom }}</th>
+                                    <td>{{ detail_competence.details|linebreaks }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 {% endblock %}

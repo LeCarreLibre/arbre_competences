@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% comment %}
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+{% endcomment %}
+
+{% block title %}Liste des compétences{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Liste des compétences</h1>
+            <div class="panel-group" id="liste-competences">
+                {% for competence in liste_competences %}
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse">
+                                    {{ competence.nom }}
+                                    <b class="caret"></b>
+                                </a>
+                            </h3>
+                        </div>
+                        <div id="item{{ forloop.counter }}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                {{ competence.description }}<br>
+                                <a href="{% url "affichage_competence" competence.id %}" class="btn btn-primary pull-right">Voir</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
