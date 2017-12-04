@@ -13,8 +13,19 @@ Ce programme est sous licence GNU GPL
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}" />
     <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-theme.min.css" %}" />
+    <link rel="icon" type="img/jpg" href="{% static "assets/logo.jpg" %}">
 </head>
 <body>
+    <nav>
+        <div class="navbar navbar-static-top navbar-inverse">
+            <ul class="nav navbar-nav">
+                <li><!--<a href="{% url "liste_profils" %}"><img src="{% static "images/logo.svg" %}" /></a>--></li>
+                <li><a href="{% url "liste_profils" %}">Liste des profils</a></li>
+                <li><a href="{% url "competences" %}">Liste des competences</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
         {% block content %}{% endblock %}
     </div>
