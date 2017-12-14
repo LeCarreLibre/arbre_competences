@@ -1,7 +1,7 @@
 from django import forms
 
 
-class NewUser(forms.Form):
+class AddUser(forms.Form):
     """create a user with a simple way"""
 
     lastname = forms.CharField(max_length=100)
