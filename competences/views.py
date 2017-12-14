@@ -12,7 +12,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
 from competences.models import Profil, Categorie
-from competences.forms import AddUser
+from competences.forms import AddUserForm
 
 
 class ListeProfils(ListView):
@@ -48,7 +48,7 @@ class AffichageCompetence(DetailView):
 
 
 def add_user(request):
-    form = AddUser(request.POST or None)
+    form = AddUserForm(request.POST or None)
     if form.is_valid():
         lastname = form.cleaned_data['lastname']
         firstname = form.cleaned_data['firstname']
