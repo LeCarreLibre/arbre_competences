@@ -47,8 +47,8 @@ class AffichageCompetence(DetailView):
     template_name = "competences/affichage_competence.html"
 
 
-def adduser(request):
-    form = addser(request.POST or None)
+def add_user(request):
+    form = AddUser(request.POST or None)
     if form.is_valid():
         lastname = form.cleaned_data['lastname']
         firstname = form.cleaned_data['firstname']
@@ -60,4 +60,4 @@ def adduser(request):
 
         envoi = True
 
-    return render(request, 'competences/new_user.html', locals())
+    return render(request, 'competences/add_user.html', locals())
