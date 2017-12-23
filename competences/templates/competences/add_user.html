@@ -8,10 +8,10 @@ Ce programme est sous licence GNU GPL
 {% block title %}Nouvel utilisateur{% endblock %}
 
 {% block content %}
-    {% if envoi %}Vous venez d'enregistrer un nouvel utilisateur!{% endif %}
-    <form action="{% url "add_user" %}" method="post">
+    {% if envoi %}<span class="">Vous venez d'enregistrer un nouvel utilisateur!</span>{% endif %}
+    <form action="{% url "add_user" %}" method="post" class="well">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Enregistrer" class="btn btn-" />
     </form>
 {% endblock %}

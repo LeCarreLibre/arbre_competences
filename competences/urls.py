@@ -19,4 +19,6 @@ urlpatterns = [
     url(r'^competence/(?P<pk>\d+)', AffichageCompetence.as_view(),
         name="affichage_competence"),
     url(r'^adduser/$', add_user, name="add_user"),
+    url(r'^connexion/$', connexion, name="connexion"),
+    url(r'^deconnexion/$', deconnexion, name="deconnexion"),
 ]
