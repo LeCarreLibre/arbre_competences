@@ -12,7 +12,6 @@ Ce programme est sous licence GNU GPL
     {% if error %}
         <p><strong>Utilisateur inconnu ou mauvais de mot de passe.</strong></p>
     {% endif %}
-    {{ next }}
     <form method="post" action=".">
         {% csrf_token %}
         {{ form.as_p }}

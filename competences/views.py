@@ -11,6 +11,9 @@ Ce programme est sous licence GNU GPL
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.contrib.auth import authenticate, login, logout
+from competences.models import Profil
+from competences.forms import AddUserForm, ConnexionForm
+from django.contrib.auth import logout
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
