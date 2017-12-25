@@ -16,13 +16,17 @@ Ce programme est sous licence GNU GPL
     <link rel="icon" type="img/jpg" href="{% static "assets/logo.jpg" %}">
 </head>
 <body>
-    <nav>
-        <div class="navbar navbar-static-top navbar-inverse">
-            <ul class="nav navbar-nav">
-                <li><!--<a href="{% url "liste_profils" %}"><img src="{% static "images/logo.svg" %}" /></a>--></li>
-                <li><a href="{% url "liste_profils" %}">Liste des profils</a></li>
-                <li><a href="{% url "competences" %}">Liste des competences</a></li>
-            </ul>
+    <nav class="navbar navbar-static-top navbar-inverse">
+        <div class="container">
+            <div class="row">
+                <ul class="nav navbar-nav col-xs-12">
+                    <li><a href="{% url "liste_profils" %}">Liste des profils</a></li>
+                    <li><a href="{% url "competences" %}">Liste des competences</a></li>
+                    <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
+                    <li class="pull-right"><a href="{% url "connexion" %}">connexion</a></li>
+                    <li class="pull-right"><a href="{% url "deconnexion" %}">deconnexion</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
