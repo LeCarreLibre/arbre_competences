@@ -10,16 +10,11 @@ Ce programme est sous licence GNU GPL
 
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.contrib.auth import authenticate, login, logout
-from competences.models import Profil
-from competences.forms import AddUserForm, ConnexionForm
-from django.contrib.auth import logout
-from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from competences.models import Profil, Categorie
-from competences.forms import AddUserForm, ConnexionForm
+from competences.forms import AddUserForm
 
 
 class ListeProfils(ListView):
@@ -65,29 +60,15 @@ def add_user(request):
         telephone = form.cleaned_data['telephone']
         voluntary = form.cleaned_data['voluntary']
         addresses = form.cleaned_data['addresses']
-
         envoi = True
+        user = User.objects.create_user(username, email, "0")
+        user.first_name, user.last_name = firstname, lastname
+        user.set_unusable_password()
+        user.save()
+        profil = Profil()
+        profil.user = user
+        profil.telephone, profil.benevole = telephone, voluntary
+        profil.adresse = addresses
+        profil.save()
 
     return render(request, 'competences/add_user.html', locals())
-
-def connexion(request):
-    error = False
-    if request.method == "POST":
-        form = ConnexionForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data["username"]
-            password = form.cleaned_data["password"]
-            user = authenticate(username=username, password=password)
-            if user: # Si l'objet renvoyé n'est pas None
-                login(request, user) # nous connectons l'utilisateur
-            else: # sinon une erreur sera affichée
-                error = True
-    else:
-        form = ConnexionForm()
-
-    return render(request, 'competences/connexion.html', locals())
-
-def deconnexion(request):
-    logout(request)
-
-    return HttpResponseRedirect(reverse(connexion))
