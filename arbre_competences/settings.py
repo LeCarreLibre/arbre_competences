@@ -148,4 +148,4 @@ STATICFILES_DIRS = [
 
 APPEND_SLASH = True
 
-LOGIN_URL = '/connexion/'
+LOGIN_URL = '/admin/login/'
