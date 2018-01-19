@@ -62,7 +62,6 @@ def add_user(request):
         telephone = form.cleaned_data['telephone']
         voluntary = form.cleaned_data['voluntary']
         addresses = form.cleaned_data['addresses']
-        envoi = True
         user = User.objects.create_user(username, email, "0")
         user.first_name, user.last_name = firstname, lastname
         user.set_unusable_password()
