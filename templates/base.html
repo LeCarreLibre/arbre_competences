@@ -23,12 +23,20 @@ Ce programme est sous licence GNU GPL
                     <li><a href="{% url "liste_profils" %}">Liste des profils</a></li>
                     <li><a href="{% url "competences" %}">Liste des competences</a></li>
                     <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
-                    <!--<li class="pull-right"><a href="{#{% url "connexion" %}#}">connexion</a></li>
-                    <li class="pull-right"><a href="{#{% url "deconnexion" %}#}">deconnexion</a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
+    
+    {% if messages %}
+    <div class="container">
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
 
     <div class="container">
         {% block content %}{% endblock %}

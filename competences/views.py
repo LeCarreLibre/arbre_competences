@@ -12,6 +12,8 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.contrib import messages
+
 
 from competences.models import Profil, Categorie
 from competences.forms import AddUserForm
@@ -43,7 +45,7 @@ class ListeCompetences(ListView):
 
 class AffichageCompetence(DetailView):
     """Affichage détaillé des personnes possédant le compétence"""
-    
+
     model = Categorie
     context_object_name = "competence"
     template_name = "competences/affichage_competence.html"
@@ -70,5 +72,8 @@ def add_user(request):
         profil.telephone, profil.benevole = telephone, voluntary
         profil.adresse = addresses
         profil.save()
-
-    return render(request, 'competences/add_user.html', locals())
+        messages.add_message(request, messages.SUCCESS,
+                             "Vous venez d'enregistrer un nouvel utilisateur!")
+        return render(request, 'competences/liste_profils.html', locals())
+    else:
+        return render(request, 'competences/add_user.html', locals())
