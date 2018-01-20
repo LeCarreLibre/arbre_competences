@@ -30,10 +30,15 @@ Ce programme est sous licence GNU GPL
 
     <div class="container">
         {% if messages %}
-        <div id="messages">
-            {% for message in messages %}
-                <span class="{{ message.tags }}">{{ message }}</span>
-            {% endfor %}
+        <div class="row">
+            <div id="messages" class="col-xs-12">
+                {% for message in messages %}
+                    <p class="alert alert-{{ message.tags }}">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            </div>
         </div>
         {% endif %}
 

@@ -8,13 +8,11 @@ Ce programme est sous licence GNU GPL
 """
 
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.http import HttpResponseRedirect
-
 
 from competences.models import Profil, Categorie
 from competences.forms import AddUserForm
@@ -54,9 +52,10 @@ class AffichageCompetence(DetailView):
 
 @login_required
 def add_user(request):
-    """Ajout d'un utilisateur et de ses coordonées"""
+    """Ajout d'un utilisateur et de ses coordonnées"""
 
     form = AddUserForm(request.POST or None)
+    
     if form.is_valid():
         lastname = form.cleaned_data['lastname']
         firstname = form.cleaned_data['firstname']
@@ -65,18 +64,20 @@ def add_user(request):
         telephone = form.cleaned_data['telephone']
         voluntary = form.cleaned_data['voluntary']
         addresses = form.cleaned_data['addresses']
+
         user = User.objects.create_user(username, email, "0")
         user.first_name, user.last_name = firstname, lastname
         user.set_unusable_password()
         user.save()
+
         profil = Profil()
         profil.user = user
         profil.telephone, profil.benevole = telephone, voluntary
         profil.adresse = addresses
         profil.save()
-        messages.add_message(request, messages.SUCCESS,
-                             "Vous venez d'enregistrer un nouvel utilisateur!",
-                             extra_tags="alert alert-success")
-        return HttpResponseRedirect("/profils/")
+
+        messages.add_message(request, messages.SUCCESS, "Vous venez d'enregistrer un nouvel utilisateur!")
+
+        return redirect("liste_profils")
     else:
         return render(request, 'competences/add_user.html', {"form": form})

@@ -6,16 +6,36 @@ Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
 from django import forms
+from django.core.validators import RegexValidator
 
+
+PHONE_VALIDATOR = RegexValidator(regex=r'^(\+\d{1,2} \(0\)\d{9,15})|(\d{10})$', message="Le n° de téléphone doit être entré au format: '+84 (0)645564421' ou '0654824178' (pour la France). Jusqu'à 15 chiffres autorisés.")
 
 class AddUserForm(forms.Form):
     """create an user in a simple way"""
 
-    lastname = forms.CharField(max_length=100, label="Nom")
-    firstname = forms.CharField(max_length=100, label="Prénom")
-    username = forms.CharField(max_length=100, label="Nom d'utilisateur")
+    lastname = forms.CharField(
+        max_length=100,
+        label="Nom"
+    )
+    firstname = forms.CharField(
+        max_length=100,
+        label="Prénom"
+    )
+    username = forms.CharField(
+        max_length=100,
+        label="Nom d'utilisateur"
+    )
     email = forms.EmailField(label="Adresse mail du nouvel utilisateur")
-    telephone = forms.CharField(min_length=10, max_length=15)
-    voluntary = forms.BooleanField(help_text="Cochez si La personne souhaite "
-                                             "être bénévole.", label="Bénevole", required=False)
-    addresses = forms.CharField(label="Adresse")
+    telephone = forms.CharField(
+        validators=[PHONE_VALIDATOR]
+    )
+    voluntary = forms.BooleanField(
+        help_text="Cochez si La personne souhaite être bénévole.",
+        label="Bénevole",
+        required=False
+    )
+    addresses = forms.CharField(
+        label="Adresse",
+        widget=forms.Textarea
+    )
