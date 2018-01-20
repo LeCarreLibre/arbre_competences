@@ -27,16 +27,16 @@ Ce programme est sous licence GNU GPL
             </div>
         </div>
     </nav>
-    
-    {% if messages %}
-    <div class="container">
-    {% for message in messages %}
-        <span{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</span>
-    {% endfor %}
-    </div>
-    {% endif %}
 
     <div class="container">
+        {% if messages %}
+        <div id="messages">
+            {% for message in messages %}
+                <span class="{{ message.tags }}">{{ message }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
         {% block content %}{% endblock %}
     </div>
 

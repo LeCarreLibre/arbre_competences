@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
 # -*-coding:utf-8 -*-
 """
+Application's Forms
 
-Formulaires de l'application
 Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
