@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*-coding:utf-8 -*-
 """
 
@@ -13,6 +13,7 @@ from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 
 from competences.models import Profil, Categorie
@@ -53,6 +54,8 @@ class AffichageCompetence(DetailView):
 
 @login_required
 def add_user(request):
+    """Ajout d'un utilisateur et de ses coordonées"""
+
     form = AddUserForm(request.POST or None)
     if form.is_valid():
         lastname = form.cleaned_data['lastname']
@@ -72,7 +75,8 @@ def add_user(request):
         profil.adresse = addresses
         profil.save()
         messages.add_message(request, messages.SUCCESS,
-                             "Vous venez d'enregistrer un nouvel utilisateur!")
-        return render(request, 'competences/liste_profils.html', locals())
+                             "Vous venez d'enregistrer un nouvel utilisateur!",
+                             extra_tags="alert alert-success")
+        return HttpResponseRedirect("/profils/")
     else:
-        return render(request, 'competences/add_user.html', locals())
+        return render(request, 'competences/add_user.html', {"form": form})

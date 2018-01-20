@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*-coding:utf-8 -*-
+"""
+
+Formulaires de l'application
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+"""
 from django import forms
 
 
