@@ -18,6 +18,9 @@ Ce programme est sous licence GNU GPL
 
 import os
 
+from django.contrib.messages import constants as message_constants
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -147,3 +150,13 @@ STATICFILES_DIRS = [
 ]
 
 APPEND_SLASH = True
+
+LOGIN_URL = '/admin/login/'
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'default',
+    message_constants.INFO: 'info',
+    message_constants.SUCCESS: 'success',
+    message_constants.WARNING: 'warning',
+    message_constants.ERROR: 'danger',
+}
