@@ -11,6 +11,6 @@ Ce programme est sous licence GNU GPL
     <form action="{% url "add_user" %}" method="post" class="well">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Enregistrer" class="btn" />
+        <input type="submit" value="Enregistrer" class="btn btn-primary" />
     </form>
 {% endblock %}
