@@ -55,7 +55,7 @@ def add_user(request):
     """Ajout d'un utilisateur et de ses coordonnées"""
 
     form = AddUserForm(request.POST or None)
-    
+
     if form.is_valid():
         lastname = form.cleaned_data['lastname']
         firstname = form.cleaned_data['firstname']
