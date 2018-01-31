@@ -41,7 +41,7 @@ class AddUserForm(forms.Form):
         widget=forms.TextInput(attrs={'class' : 'form-control'})
     )
     voluntary = forms.BooleanField(
-        help_text="Cochez si La personne souhaite être bénévole.",
+        help_text="(Cochez si La personne souhaite être bénévole.)",
         label="Bénevole",
         required=False,
         widget=forms.CheckboxInput(attrs={'class' : 'checkbox'})

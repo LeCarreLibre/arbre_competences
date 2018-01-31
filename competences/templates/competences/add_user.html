@@ -10,7 +10,64 @@ Ce programme est sous licence GNU GPL
 {% block content %}
     <form action="{% url "add_user" %}" method="post" class="well">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form.non_field_errors }}
+        {{ form.lastname.label_tag }}
+        {% if form.lastname.errors %}
+            <div class="alert alert-danger">
+                {{ form.lastname.errors }}
+            </div>
+        {% endif %}
+        {{ form.lastname }}
+
+        {{ form.firstname.label_tag }}
+        {% if form.firstname.errors %}
+            <div class="alert alert-danger">
+                {{ form.firstname.errors}}
+            </div>
+        {% endif %}
+        {{ form.firstname }}
+
+        {{ form.username.label_tag }}
+        {% if form.username.errors %}
+            <div class="alert alert-danger">
+                {{ form.username.errors}}
+            </div>
+        {% endif %}
+        {{ form.username }}
+
+        {{ form.email.label_tag }}
+        {% if form.email.errors %}
+            <div class="alert alert-danger">
+                {{ form.email.errors}}
+            </div>
+        {% endif %}
+        {{ form.email }}
+
+        {{ form.telephone.label_tag }}
+        {% if form.telephone.errors %}
+            <div class="alert alert-danger">
+                {{ form.telephone.errors}}
+            </div>
+        {% endif %}
+        {{ form.telephone }}
+
+        {{ form.voluntary.label_tag }}
+        {% if form.voluntary.errors %}
+            <div class="alert alert-danger">
+                {{ form.voluntary.errors}}
+            </div>
+        {% endif %}
+        {{ form.voluntary.help_text }}
+        {{ form.voluntary }}
+
+        {{ form.addresses.label_tag }}
+        {% if form.addresses.errors %}
+            <div class="alert alert-danger">
+                {{ form.addresses.errors}}
+            </div>
+        {% endif %}
+        {{ form.addresses }}
+
         <input type="submit" value="Enregistrer" class="btn btn-primary" />
     </form>
 {% endblock %}
