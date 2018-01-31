@@ -10,7 +10,7 @@ Ce programme est sous licence GNU GPL
 
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
@@ -50,7 +50,7 @@ class AffichageCompetence(DetailView):
     template_name = "competences/affichage_competence.html"
 
 
-@login_required
+@permission_required(['auth.add_user', 'competences.add_profil'])
 def add_user(request):
     """Ajout d'un utilisateur et de ses coordonnées"""
 
