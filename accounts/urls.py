@@ -11,6 +11,6 @@ from django.conf.urls import url
 from accounts.views import Login, Logout
 
 urlpatterns = [
-    url(r'^login/$', Login, name="connexion"), 
-    url(r'^logout/$', Logout, name="deconnexion"), 
+    url(r'^login/$', Login, name="connexion"),
+    url(r'^logout/$', Logout, name="deconnexion"),
 ]
