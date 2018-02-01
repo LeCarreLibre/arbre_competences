@@ -13,60 +13,82 @@ Ce programme est sous licence GNU GPL
         {{ form.non_field_errors }}
         {{ form.lastname.label_tag }}
         {% if form.lastname.errors %}
-            <div class="alert alert-danger">
-                {{ form.lastname.errors }}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.lastname }}
+                <span class="help-block">{{ form.lastname.errors}}</span>
             </div>
+        {% else %}
+            {{ form.lastname }}
         {% endif %}
-        {{ form.lastname }}
 
         {{ form.firstname.label_tag }}
         {% if form.firstname.errors %}
-            <div class="alert alert-danger">
-                {{ form.firstname.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.firstname }}
+                <span class="help-block">{{ form.firstname.errors}}</span>
             </div>
+        {% else %}
+            {{ form.firstname }}
         {% endif %}
-        {{ form.firstname }}
 
         {{ form.username.label_tag }}
         {% if form.username.errors %}
-            <div class="alert alert-danger">
-                {{ form.username.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.username }}
+                <span class="help-block">{{ form.username.errors}}</span>
             </div>
+        {% else %}
+            {{ form.username }}
         {% endif %}
-        {{ form.username }}
 
         {{ form.email.label_tag }}
         {% if form.email.errors %}
-            <div class="alert alert-danger">
-                {{ form.email.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.email }}
+                <span class="help-block">{{ form.email.errors}}</span>
             </div>
+        {% else %}
+            {{ form.email }}
         {% endif %}
-        {{ form.email }}
 
         {{ form.telephone.label_tag }}
         {% if form.telephone.errors %}
-            <div class="alert alert-danger">
-                {{ form.telephone.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.telephone }}
+                <span class="help-block">{{ form.telephone.errors}}</span>
             </div>
+        {% else %}
+            {{ form.telephone }}
         {% endif %}
-        {{ form.telephone }}
 
         {{ form.voluntary.label_tag }}
         {% if form.voluntary.errors %}
-            <div class="alert alert-danger">
-                {{ form.voluntary.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.voluntary }}
+                <span class="help-block">{{ form.voluntary.errors}}</span>
             </div>
+        {% else %}
+            {{ form.voluntary }}
+            {{ form.voluntary.help_text }}
+            <br />
         {% endif %}
-        {{ form.voluntary.help_text }}
-        {{ form.voluntary }}
 
         {{ form.addresses.label_tag }}
         {% if form.addresses.errors %}
-            <div class="alert alert-danger">
-                {{ form.addresses.errors}}
+            <div class="form-group has-error">
+                <label class="control-label">Erreur</label>
+                {{ form.addresses }}
+                <span class="help-block">{{ form.addresses.errors}}</span>
             </div>
+        {% else %}
+            {{ form.addresses }}
         {% endif %}
-        {{ form.addresses }}
 
         <input type="submit" value="Enregistrer" class="btn btn-primary" />
     </form>
