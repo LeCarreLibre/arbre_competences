@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'competences',
     'debug_toolbar',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -151,7 +152,7 @@ STATICFILES_DIRS = [
 
 APPEND_SLASH = True
 
-LOGIN_URL = '/admin/login/'
+LOGIN_URL = '/accounts/login/'
 
 MESSAGE_TAGS = {
     message_constants.DEBUG: 'default',
