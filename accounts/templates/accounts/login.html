@@ -1,20 +1,17 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
  
 {% comment %} 
 Ce programme est sous licence GNU GPL 
 ©2017 Nils et Samuel Van Zuijlen 
 {% endcomment %} 
  
-{% block title %}Connexion{% endblock %} 
+{% block title %}Connexion{% endblock %}
  
-{% block content %} 
-    <h1>Se connecter</h1> 
-    {% if error %} 
-        <p><strong>Utilisateur inconnu ou mauvais de mot de passe.</strong></p> 
-    {% endif %} 
-    <form method="post" action="."> 
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <input type="submit" value="Se connecter" /> 
-    </form> 
-{% endblock %} 
+{% block content %}
+    <h1>Se connecter</h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Se connecter" />
+    </form>
+{% endblock %}

@@ -7,10 +7,11 @@ Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from accounts.forms import ConnexionForm
 from django.http import HttpResponseRedirect
+
+from accounts.forms import ConnexionForm
 
 def Login(request):
     """ Login view """
@@ -23,6 +24,7 @@ def Login(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
+                return redirect("liste_profils")
     else:
         form = ConnexionForm()
 
