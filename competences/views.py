@@ -14,8 +14,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from competences.models import Profil, Categorie
+from competences.models import Categorie
 from competences.forms import AddUserForm
+from accounts.models import Profil
 
 
 class ListeProfils(ListView):
