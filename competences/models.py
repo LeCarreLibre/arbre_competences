@@ -8,7 +8,6 @@ Ce programme est sous licence GNU GPL
 """
 
 from django.db import models
-from accounts.models import Profil
 
 class Categorie(models.Model):
     """Catégories de compétences"""
