@@ -9,7 +9,6 @@ Ce programme est sous licence GNU GPL
 """
 
 from django.contrib import admin
-from django.utils.text import Truncator
 from accounts.models import Profil
 
 
