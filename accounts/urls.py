@@ -8,9 +8,9 @@ Ce programme est sous licence GNU GPL
 """
 
 from django.conf.urls import url
-from accounts.views import Login, Logout
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^login/$', Login, name="connexion"),
-    url(r'^logout/$', Logout, name="deconnexion"),
+    url(r'^login/$', auth_views.login, {'template_name': 'accounts/login.html'}, name="connexion"),#, 'next' : '/'}),
+    url(r'^logout/$', auth_views.logout, {'next_page' : '/accounts/login/'}, name="deconnexion")
 ]

@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'competences',
     'debug_toolbar',
-    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -153,6 +153,7 @@ STATICFILES_DIRS = [
 APPEND_SLASH = True
 
 LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
     message_constants.DEBUG: 'default',
