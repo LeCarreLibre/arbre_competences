@@ -28,7 +28,8 @@ class DetailAdmin(admin.ModelAdmin):
     search_fields = ('details',)
     fields = ('user', 'categorie', 'details')
 
-    def details_court(self, detail):
+    @staticmethod
+    def details_court(detail):
         """
         Retourne les 40 premiers caractères du contenu de l'article, suivi de
         points de suspension si le texte est plus long.
