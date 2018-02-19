@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*-coding:utf-8 -*-
 
 """
@@ -10,6 +9,6 @@ from django.apps import AppConfig
 
 
 class AccountsConfig(AppConfig):
-    """ Configuration of the application """
+    """ Application's configuration """
 
     name = 'accounts'

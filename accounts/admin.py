@@ -1,7 +1,6 @@
-#!/usr/bin/env python
 # -*-coding:utf-8 -*-
-"""
 
+"""
 Classes de configuration de l'interface d'administration
 
 Ce programme est sous licence GNU GPL

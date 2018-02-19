@@ -9,6 +9,7 @@ Ce programme est sous licence GNU GPL
 
 from django.db import models
 
+
 class Categorie(models.Model):
     """Catégories de compétences"""
 
