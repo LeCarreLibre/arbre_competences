@@ -8,7 +8,7 @@ Ce programme est sous licence GNU GPL
 """
 
 from django.contrib import admin
-from accounts.models import Profil
+from utilisateurs.models import Profil
 
 
 class ProfilAdmin(admin.ModelAdmin):

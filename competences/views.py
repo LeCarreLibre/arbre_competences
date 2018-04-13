@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from accounts.models import Profil
+from utilisateurs.models import Profil
 
 from competences.models import Categorie
 from competences.forms import AddUserForm

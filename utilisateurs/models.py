@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
 # -*-coding:utf-8 -*-
 
 """
 Modèles de la BdD
+
 Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """

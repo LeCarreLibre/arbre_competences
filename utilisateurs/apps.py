@@ -8,7 +8,7 @@ Ce programme est sous licence GNU GPL
 from django.apps import AppConfig
 
 
-class AccountsConfig(AppConfig):
+class UtilisateursConfig(AppConfig):
     """ Application's configuration """
 
-    name = 'accounts'
+    name = 'utilisateurs'
