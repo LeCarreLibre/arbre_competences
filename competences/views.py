@@ -14,7 +14,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 from utilisateurs.models import Profil
-
 from competences.models import Categorie
 from competences.forms import AddUserForm
 

@@ -1,17 +1,19 @@
 {% extends "base.html" %}
- 
-{% comment %} 
-Ce programme est sous licence GNU GPL 
-©2017 Nils et Samuel Van Zuijlen 
-{% endcomment %} 
- 
+{% load bootstrap %}
+
+{% comment %}
+Ce programme est sous licence GNU GPL
+©2017 Nils et Samuel Van Zuijlen
+{% endcomment %}
+
 {% block title %}Connexion{% endblock %}
- 
+
 {% block content %}
     <h1>Se connecter</h1>
     <form method="post" action=".">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form|bootstrap }}
+
         <input type="submit" value="Se connecter" />
     </form>
 {% endblock %}

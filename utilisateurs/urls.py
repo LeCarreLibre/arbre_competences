@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
 """
-
 Application's Routes
+
 Ce programme est sous licence GNU GPL
 ©2017 Nils et Samuel Van Zuijlen
 """
@@ -12,5 +12,5 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^login/$', auth_views.login, {'template_name': 'utilisateurs/login.html'}, name="connexion"),
-    url(r'^logout/$', auth_views.logout, {'next_page' : '/utilisateurs/login/'}, name="deconnexion")
+    url(r'^logout/$', auth_views.logout, {'next_page' : '/'}, name="deconnexion")
 ]
