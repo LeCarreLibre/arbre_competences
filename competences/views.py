@@ -76,7 +76,8 @@ def add_user(request):
         profil.adresse = addresses
         profil.save()
 
-        messages.add_message(request, messages.SUCCESS, "Vous venez d'enregistrer un nouvel utilisateur!")
+        messages.add_message(request, messages.SUCCESS, "Vous venez d'\
+enregistrer un nouvel utilisateur!")
 
         return redirect("liste_profils")
     else:

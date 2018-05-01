@@ -23,7 +23,8 @@ class Detail(models.Model):
     """Détails des compétences par utilisateur"""
 
     details = models.TextField()
-    user = models.ForeignKey('utilisateurs.Profil', verbose_name="utilisateur concerné")
+    user = models.ForeignKey('utilisateurs.Profil',
+                             verbose_name="utilisateur concerné")
     categorie = models.ForeignKey('Categorie')
 
     def __str__(self):

@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf import settings
 from django.db import migrations
-from django.apps import apps as global_apps
-import django.db.models.deletion
+
 
 def forwards(apps, schema_editor):
     try:
@@ -13,9 +12,11 @@ def forwards(apps, schema_editor):
     NewModel = apps.get_model('utilisateurs', 'Profil')
     NewModel.objects.bulk_create(
         NewModel(new_attribute=old_object.old_attribute)
-        # Attention! old_attribute n'existe pas pour old_object(Profil) une erreur peut survenir
+        # Attention! old_attribute n'existe pas pour old_object(Profil) une
+        # erreur peut survenir
         for old_object in OldModel.objects.all()
     )
+
 
 class Migration(migrations.Migration):
     initial = True

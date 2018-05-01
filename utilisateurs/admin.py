@@ -17,4 +17,5 @@ class ProfilAdmin(admin.ModelAdmin):
     list_filter = ('benevole',)
     search_fields = ('telephone',)
 
+
 admin.site.register(Profil, ProfilAdmin)

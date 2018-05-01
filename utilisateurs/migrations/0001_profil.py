@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
                 ('telephone', models.CharField(max_length=20, null=True, verbose_name='N° de téléphone')),
                 ('benevole', models.BooleanField(default=False)),
                 ('adresse', models.TextField(blank=True, null=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(on_delete=django.db.models. deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
