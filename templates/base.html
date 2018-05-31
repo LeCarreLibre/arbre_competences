@@ -22,8 +22,10 @@ Ce programme est sous licence GNU GPL
                 <ul class="nav navbar-nav col-xs-12">
                     <li><a href="{% url "liste_profils" %}">Liste des profils</a></li>
                     <li><a href="{% url "competences" %}">Liste des competences</a></li>
-                    <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
                     {% if user.is_authenticated %}
+                        {% if perms.auth.add_user and perms.competences.add_profile %}
+                            <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
+                        {% endif %}
                         <li class="pull-right"><a href="{% url "deconnexion" %}">Se déconnecter</a></li>
                     {% else %}
                         <li class="pull-right"><a href="{% url "connexion" %}">Se connecter</a></li>
