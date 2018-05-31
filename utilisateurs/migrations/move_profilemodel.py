@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db import migrations
 
 
-def forwards(apps, schema_editor):
+def forwards(apps, _):
     """ Récupèration des données et écriture de la table """
     try:
         OldModel = apps.get_model('competences', 'Profil')
