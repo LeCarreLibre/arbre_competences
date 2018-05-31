@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('competences', '0001_initial'),
+        ('utilisateurs', 'move_profilemodel'),
     ]
 
     operations = [

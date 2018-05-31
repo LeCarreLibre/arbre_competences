@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('competences', '0002_auto_20180410_2311'),
+        ('competences', '0001_initial'),
         ('utilisateurs', '0001_profil'),
     ]
 
