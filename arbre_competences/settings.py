@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrapform',
-    'competences',
     'debug_toolbar',
+    'competences',
+    'utilisateurs',
 ]
 
 MIDDLEWARE = [
@@ -152,7 +153,8 @@ STATICFILES_DIRS = [
 
 APPEND_SLASH = True
 
-LOGIN_URL = '/admin/login/'
+LOGIN_URL = '/utilisateurs/login/'
+LOGIN_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {
     message_constants.DEBUG: 'default',

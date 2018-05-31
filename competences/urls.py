@@ -8,7 +8,8 @@ Ce programme est sous licence GNU GPL
 """
 
 from django.conf.urls import url
-from competences.views import ListeProfils, AffichageProfil, ListeCompetences, AffichageCompetence, add_user
+from competences.views import ListeProfils, AffichageProfil, ListeCompetences,\
+                            AffichageCompetence, add_user
 
 urlpatterns = [
     url(r'^$', ListeProfils.as_view()),

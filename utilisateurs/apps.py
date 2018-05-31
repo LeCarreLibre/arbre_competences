@@ -8,5 +8,7 @@ Ce programme est sous licence GNU GPL
 from django.apps import AppConfig
 
 
-class CompetencesConfig(AppConfig):
-    name = 'competences'
+class UtilisateursConfig(AppConfig):
+    """ Application's configuration """
+
+    name = 'utilisateurs'

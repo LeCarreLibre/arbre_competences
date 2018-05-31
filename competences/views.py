@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*-coding:utf-8 -*-
 """
 
@@ -14,7 +13,8 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-from competences.models import Profil, Categorie
+from utilisateurs.models import Profil
+from competences.models import Categorie
 from competences.forms import AddUserForm
 
 
@@ -76,7 +76,8 @@ def add_user(request):
         profil.adresse = addresses
         profil.save()
 
-        messages.add_message(request, messages.SUCCESS, "Vous venez d'enregistrer un nouvel utilisateur!")
+        messages.add_message(request, messages.SUCCESS, "Vous venez d'\
+enregistrer un nouvel utilisateur!")
 
         return redirect("liste_profils")
     else:

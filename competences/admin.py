@@ -1,4 +1,3 @@
-#!/usr/bin/env python
 # -*-coding:utf-8 -*-
 """
 
@@ -10,14 +9,7 @@ Ce programme est sous licence GNU GPL
 
 from django.contrib import admin
 from django.utils.text import Truncator
-from competences.models import Profil, Categorie, Detail
-
-
-class ProfilAdmin(admin.ModelAdmin):
-    """Classe d'administration du modèle Profil"""
-    list_display = ('user', 'telephone', 'adresse', 'benevole')
-    list_filter = ('benevole',)
-    search_fields = ('telephone',)
+from competences.models import Categorie, Detail
 
 
 class CategorieAdmin(admin.ModelAdmin):
@@ -45,6 +37,6 @@ class DetailAdmin(admin.ModelAdmin):
 
     details_court.short_description = 'Aperçu du contenu'
 
-admin.site.register(Profil, ProfilAdmin)
+
 admin.site.register(Categorie, CategorieAdmin)
 admin.site.register(Detail, DetailAdmin)
