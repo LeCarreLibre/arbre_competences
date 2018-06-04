@@ -12,5 +12,3 @@ Pour pouvoir créer et utiliser un environnement il est recommandé d'utiliser p
 Si vous souhaitez seulement créer un environnement de production il vous faudra faire la commande `pipenv install`  
 Pour préparer votre environnement de développement vous devrez faire la commande `pipenv install -d` pour installer les dépendances nécessaires au développement.  
 Une fois les dépendances installées il vous suffira de passer la variable `DEBUG` à `True` dans le fichier `arbre_competences/settings.py`.
-
-**L’environnement de développement ne doit __jamais__ être commité sur master.**
