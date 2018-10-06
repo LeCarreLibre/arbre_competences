@@ -7,6 +7,7 @@ Ce programme est sous licence GNU GPL
 """
 from django import forms
 from django.core.validators import RegexValidator
+from competences.models import Categorie, Detail
 
 
 PHONE_VALIDATOR = RegexValidator(
@@ -52,3 +53,24 @@ class AddUserForm(forms.Form):
         label="Adresse",
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
+
+class AddCategorieForm(forms.Form):
+    """create a categorie in a simple way"""
+
+    name = forms.CharField(
+        max_length=255,
+        label="Nom de la catégorie",
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+
+    desc = forms.CharField(
+        label="Description",
+        widget=forms.Textarea(attrs={'class': 'form-control'})
+    )
+
+class AddDetailForm(forms.ModelForm):
+    """create a detail in a simple way"""
+
+    class Meta:
+        model = Detail
+        fields = ['user', 'categorie', 'details']

@@ -9,7 +9,7 @@ Ce programme est sous licence GNU GPL
 
 from django.conf.urls import url
 from competences.views import ListeProfils, AffichageProfil, ListeCompetences,\
-                            AffichageCompetence, add_user
+                            AffichageCompetence, AddUser, AddCategorie, AddDetail
 
 urlpatterns = [
     url(r'^$', ListeProfils.as_view()),
@@ -19,5 +19,7 @@ urlpatterns = [
     url(r'^competences/$', ListeCompetences.as_view(), name="competences"),
     url(r'^competence/(?P<pk>\d+)', AffichageCompetence.as_view(),
         name="affichage_competence"),
-    url(r'^adduser/$', add_user, name="add_user"),
+    url(r'^adduser/$', AddUser, name="add_user"),
+    url(r'^addcategorie/$', AddCategorie, name="add_categorie"),
+    url(r'^adddetail/$', AddDetail, name="add_detail"),
 ]
