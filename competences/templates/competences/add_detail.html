@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% comment %}
+Ce programme est sous licence GNU GPL
+©2017-2018 Nils et Samuel Van Zuijlen
+©2018 Samuel Van Zuijlen
+{% endcomment %}
+
+{% load bootstrap %}
+
+{% block title %}Nouveau detail{% endblock %}
+
+{% block content %}
+    <form action="{% url "add_detail" %}" method="post" class="well">
+        {% csrf_token %}
+        {{ form|bootstrap }}
+
+        <input type="submit" value="Enregistrer" class="btn btn-primary" />
+    </form>
+{% endblock %}

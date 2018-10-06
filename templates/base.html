@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <!--
 Ce programme est sous licence GNU GPL
-©2017 Nils et Samuel Van Zuijlen
+©2017-2018 Nils et Samuel Van Zuijlen
 -->
 <html>
 <head>
@@ -26,6 +26,12 @@ Ce programme est sous licence GNU GPL
                         {% if perms.auth.add_user and perms.competences.add_profile %}
                             <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
                         {% endif %}
+			{% if perms.competences.add_categorie %}
+			    <li><a href="{% url "add_categorie" %}">Ajouter une catégorie</a></li>
+			{% endif %}
+			{% if perms.competence.add_detail %}
+			    <li><a href="{% url "add_categorie" %}">Ajouter un détail</a></li>
+			{% endif %}
                         <li class="pull-right"><a href="{% url "deconnexion" %}">Se déconnecter</a></li>
                     {% else %}
                         <li class="pull-right"><a href="{% url "connexion" %}">Se connecter</a></li>
