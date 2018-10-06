@@ -27,10 +27,10 @@ Ce programme est sous licence GNU GPL
                             <li><a href="{% url "add_user" %}">Ajouter un utilisateur</a></li>
                         {% endif %}
 			{% if perms.competences.add_categorie %}
-			    <li><a href="{% url "liste_profils" %}">Ajouter une catégorie</a></li>
+			    <li><a href="{% url "add_categorie" %}">Ajouter une catégorie</a></li>
 			{% endif %}
 			{% if perms.competence.add_detail %}
-			    <li><a href="{% url "liste_profils" %}">Ajouter un détail</a></li>
+			    <li><a href="{% url "add_categorie" %}">Ajouter un détail</a></li>
 			{% endif %}
                         <li class="pull-right"><a href="{% url "deconnexion" %}">Se déconnecter</a></li>
                     {% else %}
