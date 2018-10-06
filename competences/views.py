@@ -15,7 +15,7 @@ from django.contrib import messages
 
 from utilisateurs.models import Profil
 from competences.models import Categorie
-from competences.forms import AddUserForm
+from competences.forms import AddUserForm, AddCategorieForm
 
 
 class ListeProfils(ListView):
@@ -82,3 +82,25 @@ enregistrer un nouvel utilisateur!")
         return redirect("liste_profils")
     else:
         return render(request, 'competences/add_user.html', {"form": form})
+
+@permission_required(['competences.add_categorie'])
+def add_categorie(request):
+    """Ajout d'une nouvelle catégorie"""
+
+    form = AddCategorieForm(request.POST or None)
+
+    if form.is_valid():
+        name = form.cleaned_data['name']
+        desc = form.cleaned_data['desc']
+
+        categorie = Categorie()
+        categorie.nom = name
+        categorie.description = desc
+        categorie.save()
+
+        messages.add_message(request, messages.SUCCESS, "Vous venez d'\
+enregistrer une nouvelle catégorie de compétence!")
+
+        return redirect("liste_profils")
+    else:
+        return render(request, 'competences/add_categorie.html', {"form": form})

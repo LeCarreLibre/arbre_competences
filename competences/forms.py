@@ -52,3 +52,17 @@ class AddUserForm(forms.Form):
         label="Adresse",
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
+
+class AddCategorieForm(forms.Form):
+    """create a categorie in a simple way"""
+
+    name = forms.CharField(
+        max_length=255,
+        label="Nom de la catégorie",
+        widget=forms.TextInput(attrs={'class': 'form-control'})
+    )
+
+    desc = forms.CharField(
+        label="Description",
+        widget=forms.Textarea(attrs={'class': 'form-control'})
+    )
