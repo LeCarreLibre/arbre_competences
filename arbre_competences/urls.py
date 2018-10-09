@@ -16,7 +16,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 
 Ce programme est sous licence GNU GPL
-©2017 Nils et Samuel Van Zuijlen
+©2017-2018 Nils et Samuel Van Zuijlen
 """
 from django.conf import settings
 from django.conf.urls import url, include
