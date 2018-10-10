@@ -11,8 +11,8 @@ from django.conf.urls import url
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^login/$', auth_views.LoginView, {'template_name': 'utilisateurs/login.\
-html'}, name="connexion"),
-    url(r'^logout/$', auth_views.LogoutView, {'next_page': '/'},
+    url(r'^login/$', auth_views.LoginView.as_view, {'template_name': 'utilisateurs/logi\
+    n.html'}, name="connexion"),
+    url(r'^logout/$', auth_views.LogoutView.as_view, {'next_page': '/'},
         name="deconnexion")
 ]
