@@ -1,6 +1,6 @@
 # Arbre des competences
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb24e635ff1b489380ddf43c869e6f7c)](https://www.codacy.com/app/nilsdu29/arbre_competences?utm_source=github.com&utm_medium=referral&utm_content=nils-van-zuijlen/arbre_competences&utm_campaign=badger)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bb24e635ff1b489380ddf43c869e6f7c)](https://app.codacy.com/project/Le_Carre_Libre/arbre_competences/dashboard)
 [![Code Health](https://landscape.io/github/nils-van-zuijlen/arbre_competences/master/landscape.svg?style=flat)](https://landscape.io/github/nils-van-zuijlen/arbre_competences/master)
 
 ------------

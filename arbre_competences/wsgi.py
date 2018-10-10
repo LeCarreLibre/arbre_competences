@@ -9,7 +9,7 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 
 Ce programme est sous licence GNU GPL
-©2017 Nils et Samuel Van Zuijlen
+©2017-2018 Nils et Samuel Van Zuijlen
 """
 
 import os

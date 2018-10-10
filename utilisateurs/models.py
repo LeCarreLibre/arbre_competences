@@ -4,7 +4,7 @@
 Modèles de la BdD
 
 Ce programme est sous licence GNU GPL
-©2017 Nils et Samuel Van Zuijlen
+©2017-2018 Nils et Samuel Van Zuijlen
 """
 
 from django.db import models
@@ -14,7 +14,7 @@ from django.contrib.auth.models import User
 class Profil(models.Model):
     """Informations supplémentaires sur les utilisateurs"""
 
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     # La liaison OneToOne vers le modèle User
     telephone = models.CharField(null=True, verbose_name="N° de téléphone",
                                  max_length=20)
