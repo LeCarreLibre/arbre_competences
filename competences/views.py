@@ -17,6 +17,7 @@ from utilisateurs.models import Profil
 from competences.models import Categorie, Detail
 from competences.forms import AddUserForm, AddCategorieForm, AddDetailForm
 
+
 class ListeProfils(ListView):
     """Liste des profils utilisateurs"""
 
