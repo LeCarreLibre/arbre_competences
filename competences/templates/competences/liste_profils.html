@@ -2,7 +2,7 @@
 
 {% comment %}
 Ce programme est sous licence GNU GPL
-©2017 Nils et Samuel Van Zuijlen
+©2017-2018 Nils et Samuel Van Zuijlen
 {% endcomment %}
 
 {% block title %}Liste des profils{% endblock %}
@@ -16,7 +16,7 @@ Ce programme est sous licence GNU GPL
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse"> {{ profil.user.first_name }} {{ profil.user.last_name }} <b class="caret"></b> </a> 
+                                <a href="#item{{ forloop.counter }}" data-parent="#liste-profils" data-toggle="collapse"> {{ profil.user.first_name }} {{ profil.user.last_name }} <b class="caret"></b> </a>
                             </h3>
                         </div>
                         <div id="item{{ forloop.counter }}" class="panel-collapse collapse">

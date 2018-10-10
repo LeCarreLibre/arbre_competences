@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 django-bootstrap-form = "*"
-Django = "~=1.11"
+Django = "*"
 
 [dev-packages]
 django-debug-toolbar = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7"

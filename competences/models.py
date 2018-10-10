@@ -24,8 +24,9 @@ class Detail(models.Model):
 
     details = models.TextField()
     user = models.ForeignKey('utilisateurs.Profil',
+                             on_delete=models.CASCADE,
                              verbose_name="utilisateur concerné")
-    categorie = models.ForeignKey('Categorie')
+    categorie = models.ForeignKey('Categorie', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.details
