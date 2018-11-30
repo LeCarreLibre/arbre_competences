@@ -4,11 +4,11 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-django-bootstrap-form = "*"
-Django = "*"
+django-bootstrap-form = "<=3.4"
+Django = "<=2.1"
 
 [dev-packages]
-django-debug-toolbar = "*"
+django-debug-toolbar = "<=1.10"
 
 [requires]
 python_version = "3.7"
