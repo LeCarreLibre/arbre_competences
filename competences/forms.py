@@ -54,6 +54,7 @@ class AddUserForm(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
 
+
 class AddCategorieForm(forms.Form):
     """create a categorie in a simple way"""
 
@@ -67,6 +68,7 @@ class AddCategorieForm(forms.Form):
         label="Description",
         widget=forms.Textarea(attrs={'class': 'form-control'})
     )
+
 
 class AddDetailForm(forms.ModelForm):
     """create a detail in a simple way"""

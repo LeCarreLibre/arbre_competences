@@ -30,7 +30,7 @@ Ce programme est sous licence GNU GPL
 			    <li><a href="{% url "add_categorie" %}">Ajouter une catégorie</a></li>
 			{% endif %}
 			{% if perms.competence.add_detail %}
-			    <li><a href="{% url "add_categorie" %}">Ajouter un détail</a></li>
+			    <li><a href="{% url "add_detail" %}">Ajouter un détail</a></li>
 			{% endif %}
                         <li class="pull-right"><a href="{% url "deconnexion" %}">Se déconnecter</a></li>
                     {% else %}
