@@ -4,6 +4,7 @@ Application's Forms
 
 Ce programme est sous licence GNU GPL
 ©2017-2018 Nils et Samuel Van Zuijlen
+©2019 Samuel Van Zuijlen
 """
 from django import forms
 from django.core.validators import RegexValidator
