@@ -4,6 +4,7 @@ Application's Forms
 
 Ce programme est sous licence GNU GPL
 ©2017-2018 Nils et Samuel Van Zuijlen
+©2019 Samuel Van Zuijlen
 """
 from django import forms
 from django.core.validators import RegexValidator
@@ -54,6 +55,7 @@ class AddUserForm(forms.Form):
         widget=forms.TextInput(attrs={'class': 'form-control'})
     )
 
+
 class AddCategorieForm(forms.Form):
     """create a categorie in a simple way"""
 
@@ -68,25 +70,10 @@ class AddCategorieForm(forms.Form):
         widget=forms.Textarea(attrs={'class': 'form-control'})
     )
 
+
 class AddDetailForm(forms.ModelForm):
+    """create a detail in a simple way"""
+
     class Meta:
         model = Detail
         fields = ['user', 'categorie', 'details']
-
-# class AddDetailForm(forms.Form):
-#     """Add a detail to a user in a simple way"""
-#
-#     user = forms.ChoiceField(
-#         label="Utilisateur concerné",
-#         widget=forms.ChoiceField()
-#     )
-#
-#     categorie = forms.ChoiceField(
-#         label="Catégorie",
-#         widget=forms.ChoiceField()
-#     )
-#
-#     details = forms.CharField(
-#         label="Details",
-#         widget=forms.Textarea(attrs={'class': 'form-control'})
-#     )

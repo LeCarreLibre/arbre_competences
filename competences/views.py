@@ -4,6 +4,7 @@
 Vues de l'application
 Ce programme est sous licence GNU GPL
 ©2017-2018 Nils et Samuel Van Zuijlen
+©2019 Samuel Van Zuijlen
 """
 
 
@@ -84,6 +85,8 @@ enregistrer un nouvel utilisateur!")
     else:
         return render(request, 'competences/add_user.html', {"form": form})
 
+
+@login_required
 @permission_required(['competences.add_categorie'])
 def AddCategorie(request):
     """Ajout d'une nouvelle catégorie"""
@@ -106,6 +109,8 @@ enregistrer une nouvelle catégorie de compétence!")
     else:
         return render(request, 'competences/add_categorie.html', {"form": form})
 
+
+@login_required
 @permission_required(['competences.add_detail'])
 def AddDetail(request):
     """Ajout d'un nouveau détail"""

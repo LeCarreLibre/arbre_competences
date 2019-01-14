@@ -5,6 +5,7 @@ Classes de configuration de l'interface d'administration
 
 Ce programme est sous licence GNU GPL
 ©2017-2018 Nils et Samuel Van Zuijlen
+©2019 Samuel Van Zuijlen
 """
 
 from django.contrib import admin
